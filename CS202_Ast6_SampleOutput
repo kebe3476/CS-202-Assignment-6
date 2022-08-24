@@ -1,0 +1,257 @@
+
+
+CS202- Assignment 6
+Semester- Spring 2021
+Sample Output
+
+Note: After each selection, you will see the Menu. However, to reduce the length of sample output, I deleted Menu message after each selection. Do not change your main.cpp file and americanCoinType.h files.
+
+
+kc@kc-VirtualBox:/media/shared_dir/CoinOp$ g++ -g -std=c++11 -Wall -Wpedantic americanCoinType.cpp main.cpp -o ast6
+kc@kc-VirtualBox:/media/shared_dir/CoinOp$ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes -s ./ast6
+==18238== Memcheck, a memory error detector
+==18238== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18238== Using Valgrind-3.16.1 and LibVEX; rerun with -h for copyright info
+==18238== Command: ./ast6
+==18238== 
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 5; Nickel = 5; Dime = 5; Quarter = 5; Fifty_centpiece = 5; Cents = 455; Dollars = 4.55; Address = 0x1ffefffae8
+
+--------------------------------------------------------------
+|  Selection Menu                                            |
+|  A:- +   (Addition)                                        |
+|  B:- -   (Subtraction)                                     |
+|  C:- *   (Multiplication)                                  |
+|  D:- -=  (coinBox2 -= coinBox1)                            |
+|  E:- x++ (coinBox1 postincrement; coinBox2 postincrement)  |
+|  F:- ++x (coinBox1 preincrement; coinBox2 preincrement)    |
+|  G:- x-- (coinBox1 postdecrement; coinBox2 postdecrement)  |
+|  H:- --x (coinBox1 predecrement; coinBox2 predecrement)    |
+|  I:- ==  (compare: if (coinBox1 == coinBox2))              |
+|  J:- !=  (compare: if (coinBox1 != coinBox2))              |
+|  K:- <   (compare: if (coinBox1 < coinBox2))               |
+|  L:- >   (compare: if (coinBox1 > coinBox2))               |
+|  M:- <=  (compare: if (coinBox1 <= coinBox2))              |
+|  N:- >=  (compare: if (coinBox2 >= coinBox1))              |
+|  O:- =   (Assignment operator; coinBox2 = coinBox1)        |
+|  P:-     (Print CoinBoxs Value)                            |
+|  R:-     (Insert Coins to Coinbox1)                        |
+|  S:-     (Insert Coins to Coinbox2)                        |
+|  Q:-     (Exit)                                            |
+--------------------------------------------------------------
+
+
+Make your choice: a
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 5; Nickel = 5; Dime = 5; Quarter = 5; Fifty_centpiece = 5; Cents = 455; Dollars = 4.55; Address = 0x1ffefffae8
+ADD: coinBoxRes = coinBox1 + coinBox2 
+coinBoxRes :- Penny = 15; Nickel = 15; Dime = 15; Quarter = 15; Fifty_centpiece = 15; Cents = 1365; Dollars = 13.65; Address = 0x1ffefffb08
+
+
+--------------------------------------------------------------
+|  Selection Menu                                            |
+|  A:- +   (Addition)                                        |
+|  B:- -   (Subtraction)                                     |
+|  C:- *   (Multiplication)                                  |
+|  D:- -=  (coinBox2 -= coinBox1)                            |
+|  E:- x++ (coinBox1 postincrement; coinBox2 postincrement)  |
+|  F:- ++x (coinBox1 preincrement; coinBox2 preincrement)    |
+|  G:- x-- (coinBox1 postdecrement; coinBox2 postdecrement)  |
+|  H:- --x (coinBox1 predecrement; coinBox2 predecrement)    |
+|  I:- ==  (compare: if (coinBox1 == coinBox2))              |
+|  J:- !=  (compare: if (coinBox1 != coinBox2))              |
+|  K:- <   (compare: if (coinBox1 < coinBox2))               |
+|  L:- >   (compare: if (coinBox1 > coinBox2))               |
+|  M:- <=  (compare: if (coinBox1 <= coinBox2))              |
+|  N:- >=  (compare: if (coinBox2 >= coinBox1))              |
+|  O:- =   (Assignment operator; coinBox2 = coinBox1)        |
+|  P:-     (Print CoinBoxs Value)                            |
+|  R:-     (Insert Coins to Coinbox1)                        |
+|  S:-     (Insert Coins to Coinbox2)                        |
+|  Q:-     (Exit)                                            |
+--------------------------------------------------------------
+
+Make your choice: b             
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 5; Nickel = 5; Dime = 5; Quarter = 5; Fifty_centpiece = 5; Cents = 455; Dollars = 4.55; Address = 0x1ffefffae8
+SUBTRACT: coinBoxRes = coinBox1 - coinBox2 
+coinBoxRes :- Penny = 5; Nickel = 5; Dime = 5; Quarter = 5; Fifty_centpiece = 5; Cents = 455; Dollars = 4.55; Address = 0x1ffefffb08
+
+Make your choice: c
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 5; Nickel = 5; Dime = 5; Quarter = 5; Fifty_centpiece = 5; Cents = 455; Dollars = 4.55; Address = 0x1ffefffae8
+MULTIPLICATION: coinBoxRes =  coinBox1 * coinBox2 
+coinBoxRes :- Penny = 50; Nickel = 50; Dime = 50; Quarter = 50; Fifty_centpiece = 50; Cents = 4550; Dollars = 45.5; Address = 0x1ffefffb08
+
+Make your choice: d
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 5; Nickel = 5; Dime = 5; Quarter = 5; Fifty_centpiece = 5; Cents = 455; Dollars = 4.55; Address = 0x1ffefffae8
+SUBTRACT: coinBox2 -= coinBox1
+coinBox2 :- Penny = 0; Nickel = 0; Dime = 0; Quarter = 0; Fifty_centpiece = 0; Cents = 0; Dollars = 0; Address = 0x1ffefffae8
+
+Make your choice: e
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox1 postincrement: 
+After postincrement : 
+coinBox1 :- Penny = 11; Nickel = 11; Dime = 11; Quarter = 11; Fifty_centpiece = 11; Cents = 1001; Dollars = 10.01; Address = 0x1ffefffac8
+
+coinBox2 :- Penny = 0; Nickel = 0; Dime = 0; Quarter = 0; Fifty_centpiece = 0; Cents = 0; Dollars = 0; Address = 0x1ffefffae8
+coinBox2 postincrement: 
+After postincrement : 
+coinBox2 :- Penny = 1; Nickel = 1; Dime = 1; Quarter = 1; Fifty_centpiece = 1; Cents = 91; Dollars = 0.91; Address = 0x1ffefffae8
+
+Make your choice: f
+
+coinBox1 :- Penny = 11; Nickel = 11; Dime = 11; Quarter = 11; Fifty_centpiece = 11; Cents = 1001; Dollars = 10.01; Address = 0x1ffefffac8
+coinBox1 preincrement: 
+After preincrement : 
+coinBox1 :- Penny = 12; Nickel = 12; Dime = 12; Quarter = 12; Fifty_centpiece = 12; Cents = 1092; Dollars = 10.92; Address = 0x1ffefffac8
+
+coinBox2 :- Penny = 1; Nickel = 1; Dime = 1; Quarter = 1; Fifty_centpiece = 1; Cents = 91; Dollars = 0.91; Address = 0x1ffefffae8
+coinBox2 preincrement: 
+After preincrement : 
+coinBox2 :- Penny = 2; Nickel = 2; Dime = 2; Quarter = 2; Fifty_centpiece = 2; Cents = 182; Dollars = 1.82; Address = 0x1ffefffae8
+
+Make your choice: g
+
+coinBox1 :- Penny = 12; Nickel = 12; Dime = 12; Quarter = 12; Fifty_centpiece = 12; Cents = 1092; Dollars = 10.92; Address = 0x1ffefffac8
+coinBox1 postdecrement: 
+After postdecrement : 
+coinBox1 :- Penny = 11; Nickel = 11; Dime = 11; Quarter = 11; Fifty_centpiece = 11; Cents = 1001; Dollars = 10.01; Address = 0x1ffefffac8
+
+coinBox2 :- Penny = 2; Nickel = 2; Dime = 2; Quarter = 2; Fifty_centpiece = 2; Cents = 182; Dollars = 1.82; Address = 0x1ffefffae8
+coinBox2 postdecrement: 
+After postdecrement : 
+coinBox2 :- Penny = 1; Nickel = 1; Dime = 1; Quarter = 1; Fifty_centpiece = 1; Cents = 91; Dollars = 0.91; Address = 0x1ffefffae8
+
+Make your choice: h
+
+coinBox1 :- Penny = 11; Nickel = 11; Dime = 11; Quarter = 11; Fifty_centpiece = 11; Cents = 1001; Dollars = 10.01; Address = 0x1ffefffac8
+coinBox1 predecrement: 
+After predecrement : 
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+
+coinBox2 :- Penny = 1; Nickel = 1; Dime = 1; Quarter = 1; Fifty_centpiece = 1; Cents = 91; Dollars = 0.91; Address = 0x1ffefffae8
+coinBox2 predecrement: 
+After predecrement : 
+coinBox2 :- Penny = 0; Nickel = 0; Dime = 0; Quarter = 0; Fifty_centpiece = 0; Cents = 0; Dollars = 0; Address = 0x1ffefffae8
+
+Make your choice: i
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 0; Nickel = 0; Dime = 0; Quarter = 0; Fifty_centpiece = 0; Cents = 0; Dollars = 0; Address = 0x1ffefffae8
+
+compare: if (coinBox1 == coinBox2)
+coinBox1 and coinBox2 are not equal.
+
+Make your choice: j
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 0; Nickel = 0; Dime = 0; Quarter = 0; Fifty_centpiece = 0; Cents = 0; Dollars = 0; Address = 0x1ffefffae8
+
+compare: if (coinBox1 != coinBox2)
+coinBox1 and coinBox2 are not equal.
+
+Make your choice: k
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 0; Nickel = 0; Dime = 0; Quarter = 0; Fifty_centpiece = 0; Cents = 0; Dollars = 0; Address = 0x1ffefffae8
+
+compare: if (coinBox1 < coinBox2)
+coinBox1 is NOT less than coinBox2.
+
+Make your choice: l
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 0; Nickel = 0; Dime = 0; Quarter = 0; Fifty_centpiece = 0; Cents = 0; Dollars = 0; Address = 0x1ffefffae8
+
+compare: if (coinBox1 > coinBox2)
+coinBox1 is greater than coinBox2.
+
+Make your choice: m
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 0; Nickel = 0; Dime = 0; Quarter = 0; Fifty_centpiece = 0; Cents = 0; Dollars = 0; Address = 0x1ffefffae8
+
+compare: if (coinBox1 <= coinBox2)
+coinBox1 is NOT less than or equal to coinBox2.
+
+Make your choice: n
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 0; Nickel = 0; Dime = 0; Quarter = 0; Fifty_centpiece = 0; Cents = 0; Dollars = 0; Address = 0x1ffefffae8
+
+compare: if (coinBox2 >= coinBox1)
+coinBox2 is NOT greater than or equal to coinBox1.
+
+Make your choice: o
+
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 0; Nickel = 0; Dime = 0; Quarter = 0; Fifty_centpiece = 0; Cents = 0; Dollars = 0; Address = 0x1ffefffae8
+Assignment: coinBox2=coinBox1
+coinBox2 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffae8
+
+Make your choice: p
+coinBox1 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffac8
+coinBox2 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffae8
+
+Make your choice: r
+Insert Coins to CoinBox1 
+penny : 
+10
+nickel : 
+20
+dime : 
+30
+quarter : 
+40
+fifty_centpiece : 
+50
+
+Make your choice: p
+coinBox1 :- Penny = 20; Nickel = 30; Dime = 40; Quarter = 50; Fifty_centpiece = 60; Cents = 4820; Dollars = 48.2; Address = 0x1ffefffac8
+coinBox2 :- Penny = 10; Nickel = 10; Dime = 10; Quarter = 10; Fifty_centpiece = 10; Cents = 910; Dollars = 9.1; Address = 0x1ffefffae8
+
+Make your choice: s
+Insert Coins to CoinBox2 
+penny : 
+15
+nickel : 
+30
+dime : 
+45
+quarter : 
+50
+fifty_centpiece : 
+60
+
+Make your choice: p
+coinBox1 :- Penny = 20; Nickel = 30; Dime = 40; Quarter = 50; Fifty_centpiece = 60; Cents = 4820; Dollars = 48.2; Address = 0x1ffefffac8
+coinBox2 :- Penny = 25; Nickel = 40; Dime = 55; Quarter = 60; Fifty_centpiece = 70; Cents = 5775; Dollars = 57.75; Address = 0x1ffefffae8
+
+Make your choice: q
+==18238== 
+==18238== FILE DESCRIPTORS: 3 open at exit.
+==18238== Open file descriptor 2: /dev/pts/0
+==18238==    <inherited from parent>
+==18238== 
+==18238== Open file descriptor 1: /dev/pts/0
+==18238==    <inherited from parent>
+==18238== 
+==18238== Open file descriptor 0: /dev/pts/0
+==18238==    <inherited from parent>
+==18238== 
+==18238== 
+==18238== HEAP SUMMARY:
+==18238==     in use at exit: 0 bytes in 0 blocks
+==18238==   total heap usage: 19 allocs, 19 frees, 75,552 bytes allocated
+==18238== 
+==18238== All heap blocks were freed -- no leaks are possible
+==18238== 
+==18238== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
